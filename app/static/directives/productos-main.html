@@ -1,0 +1,17 @@
+<div class="row">
+	<input ng-model="searchProducts.$" type="text" class="form-control" placeholder="Buscar.." aria-describedby="basic-addon2">
+</div>
+<div class="row">
+<table class="table table-hover">
+	<tr><th>Nombre</th><th>Referencia</th><th>Precio</th><th>Foto</th></tr>
+	<tr ng-repeat="product in products | filter:searchProducts">
+		<td>{[product.name]}</td>
+		<td>{[product.reference]}</td>
+		<td>{[product.price | currency:"CO$"]}</td>
+		<td><img class="img-responsive" src="{[product.image]}" style="max-width:140px;"></td>
+	</tr>
+</table>
+</div>
+<div class="plusWrapper">
+<button class="btn btn-info plus"><img class="img-responsive plusImg" src="/static/images/mas.png" ></button>
+</div>
